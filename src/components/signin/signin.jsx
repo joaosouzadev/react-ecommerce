@@ -14,7 +14,7 @@ class SignIn extends React.Component {
         }
     }
 
-    handleSubmit = event => {
+    handleSubmit = async event => {
         event.preventDefault();
 
         this.setState({email: '', senha: ''});
@@ -29,7 +29,7 @@ class SignIn extends React.Component {
     render() {
         return(
             <div className='signin'>
-                <h2>Já possui uma conta?</h2>
+                <h2 className='title'>Já possui uma conta?</h2>
                 <span>Entre com seu e-mail e senha</span>
 
                 <form onSubmit={this.handleSubmit}>
@@ -37,7 +37,8 @@ class SignIn extends React.Component {
                         name='email' 
                         type='email' 
                         value={this.state.email} 
-                        required handleChange={this.handleChange}
+                        required 
+                        handleChange={this.handleChange}
                         label='Email'
                     />
                     <Input 
